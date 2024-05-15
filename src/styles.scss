@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f6f5f4;
+}
+
+// for login and register pages
+.user-auth-container {
+    background-color: #f6f5f4;
+    // background: linear-gradient(to bottom, #41b5da, #3d63dd);
+    height: 100vh;
+    width: 100vw;
+}

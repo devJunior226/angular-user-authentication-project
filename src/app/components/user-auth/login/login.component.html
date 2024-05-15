@@ -1,0 +1,43 @@
+<div class="user-auth-container">
+  <form 
+    class="flex justify-content-center align-items-center h-full"
+    [formGroup]="loginFormGroup" 
+    (ngSubmit)="onLogin()">
+    <p-card header="Login" [style]="{ width: '360px' }">
+      <!-- mail section -->
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" pInputText formControlName="email" class="w-full" name="email"
+          placeholder="Type your email" />
+        <!-- validations conditions -->
+        <!-- <small
+        *ngIf="loginFormGroup.controls['email'].invalid && (loginFormGroup.controls['email'].dirty || loginFormGroup.controls['email'].touched)"
+      >
+      </small> -->
+        <small class="block p-error" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors?.['required']">Email is required</div>
+          <div *ngIf="email.errors?.['email']">Your email is invalid</div>
+        </small>
+      </div>
+
+      <!-- password section -->
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" pInputText formControlName="password" class="w-full" name="password"
+          placeholder="Type your password" />
+
+        <!-- password validation -->
+        <small class="block p-error" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="password.errors?.['required']">Password is required</div>
+        </small>
+      </div>
+
+      <p-button type="submit" label="Sign in" styleClass="w-full" [disabled]="loginFormGroup.invalid">
+      </p-button>
+
+      <div class="mt-2 flex justify-content-center align-items-center">
+        Not a member ? <a routerLink="/register" class="m-1">Register</a>
+      </div>
+    </p-card>
+  </form>
+</div>
